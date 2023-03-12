@@ -1,19 +1,16 @@
 import { ProjDefault, ProjInfo } from "./projects";
 
-import tekkaz1 from "../../../public/images/projects/tekkaz1.png"
-import tekkaz2 from "../../../public/images/projects/tekkaz2.png"
-import tekkaz3 from "../../../public/images/projects/tekkaz3.png"
+import tekkaz1 from "../../public/images/projects/tekkaz1.png"
+import tekkaz2 from "../../public/images/projects/tekkaz2.png"
+import tekkaz3 from "../../public/images/projects/tekkaz3.png"
 
-import producktiv1 from "../../../public/images/projects/producktiv1.png"
-import producktiv2 from "../../../public/images/projects/producktiv2.png"
-import producktiv3 from "../../../public/images/projects/producktiv3.png"
+import producktiv1 from "../../public/images/projects/producktiv1.png"
+import producktiv2 from "../../public/images/projects/producktiv2.png"
+import producktiv3 from "../../public/images/projects/producktiv3.png"
 
-import duck from "../../../public/images/misc/duck.png"
-import paper from "../../../public/images/misc/paper.png"
-import github from "../../../public/images/misc/github.png"
-
-
-import { BsNewspaper } from "react-icons/bs"
+import duck from "../../public/images/misc/duck.png"
+import paper from "../../public/images/misc/paper.png"
+import github from "../../public/images/misc/github.png"
 
 export const Projs: ProjDefault[] = [
     {

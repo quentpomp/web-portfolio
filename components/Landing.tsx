@@ -37,15 +37,15 @@ interface SyntheticEvent {
 }
 
 export default function Landing({ }: Props) {
-    const [columns, setColumns] = useState(Math.floor(window.innerWidth / 80))
-    const [rows, setRows] = useState(Math.floor(window.innerHeight / 80))
+    const [columns, setColumns] = useState(0)
+    const [rows, setRows] = useState(0)
     const [toggled, setToggled] = useState(true);
 
     
   
     const resizeHandler = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
+      const width = window?.innerWidth;
+      const height = window?.innerHeight;
   
       setColumns(Math.floor(width / 80))
       setRows(Math.floor(height / 80))
@@ -55,9 +55,11 @@ export default function Landing({ }: Props) {
     };
   
     useEffect(() => {
-      window.addEventListener('resize', resizeHandler);
+      setColumns(Math.floor(window?.innerWidth / 80))
+      setRows(Math.floor(window?.innerHeight / 80))
+      window?.addEventListener('resize', resizeHandler);
       return () => {
-        window.removeEventListener('resize', resizeHandler);
+        window?.removeEventListener('resize', resizeHandler);
       }
     }, []);
   

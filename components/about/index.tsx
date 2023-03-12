@@ -3,8 +3,8 @@ import React, { Dispatch, SetStateAction, useRef } from 'react'
 import Image from 'next/image';
 import { IoCloseSharp } from "react-icons/io5";
 import { motion, useScroll } from "framer-motion";
-import { Cursor, useTypewriter } from 'react-simple-typewriter'
-import calculating from "../../../public/images/calculating.png"
+// import { Cursor, useTypewriter } from 'react-simple-typewriter'
+import calculating from "../../public/images/calculating.png"
 
 type Props = {setIdx: Dispatch<SetStateAction<number>>}
 // Dispatch<SetStateAction<number>>

@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import Image from 'next/image'
-import hey from "../../public/images/hey.png"
+import hey from "../public/images/hey.png"
 import { FaLinkedinIn, FaGithub } from "react-icons/fa"
 import { FiCoffee } from "react-icons/fi"
 import { motion } from 'framer-motion'

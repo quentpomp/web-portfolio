@@ -1,9 +1,7 @@
 'use client'
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import Header from './components/Header'
-import Landing from './components/Landing'
-import wink from "../public/images/wink.png"
+import { useState } from "react"
+import Header from '../components/Header'
+import Landing from '../components/Landing'
 
 export default function Home() {
   const [y, setY] = useState<number>(50)
