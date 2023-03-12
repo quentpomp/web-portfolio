@@ -1,91 +1,61 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+'use client'
+import { useState, useEffect } from "react"
+import Image from "next/image"
+import Header from './components/Header'
+import Landing from './components/Landing'
+import wink from "../public/images/wink.png"
 
 export default function Home() {
+  const [y, setY] = useState<number>(50)
+  const [x, setX] = useState<number>(50);
+  const [keyMap, setKeyMap] = useState()
+  // const [speed, setSpeed] = useState<number>(10);
+  const [angle, setAngle] = useState<number>(0);
+  // const [moveAngle, setMoveAngle] = useState<number>(0);
+
+  // useEffect(() => {
+  //   window.addEventListener('keydown', keyHandler);
+  //   return () => {
+  //     window.removeEventListener('keydown', keyHandler);
+  //   }
+  // });
+
+  // const keyHandler = (e: KeyboardEvent) => {
+  //  let speed = 0
+  //  let moveAngle = 0
+  //  if (e.key === "ArrowLeft") {moveAngle = -10;}
+  //  if (e.key === "ArrowRight") {moveAngle = 10;}
+  //  if (e.key === "ArrowUp") {speed = 5;}
+  //  if (e.key === "ArrowDown") {speed = -5;}
+  //  setAngle(angle + (moveAngle * Math.PI / 180))
+  //  setX(x + (speed * Math.sin(angle)))
+  //  setY(y - (speed * Math.cos(angle)))
+  // }
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <div>
+      {/* Header */} 
+      {/* <Image 
+        style={{
+          position: "absolute",
+          top: `calc(${y}px)`,
+          left: `calc(${x}px)`, 
+          width: "50px",
+          height: "50px",
+          rotate: `${angle}rad`,
+          // backgroundColor: 'aliceblue',
+          // borderRadius: "5px",
+          zIndex: 100,
+          transition: "ease"
+        }}
+        src={wink}
+        alt="wink"
+      />     */}
+      <Header/>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      {/* Landing */}
+      <Landing />
+    </div>
   )
 }
