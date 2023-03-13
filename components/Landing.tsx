@@ -248,7 +248,7 @@ export default function Landing({ }: Props) {
                                     type: "spring",
                                     duration: .2
                                 }}
-                                className='p-3 rounded-lg bg-blue-200 hover:bg-blue-300 hover:shadow-lg'
+                                className='p-2 md:p-3 rounded-lg bg-blue-200 hover:bg-blue-300 hover:shadow-lg'
                             >
                                 {button.icon}
                             </motion.div>
