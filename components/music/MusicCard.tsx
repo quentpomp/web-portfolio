@@ -16,7 +16,7 @@ export default function MusicCard({ muzData, setSelectedMusic }: Props) {
             <motion.button
                 onClick={close}
                 whileHover={{ scale: 1.1 }}
-                className='fixed top-3 right-3 w-6 h-6 rounded-full text-blue-500 bg-blue-300 hover:bg-blue-400 hover:text-blue-600 flex justify-center items-center cursor-pointer'>
+                className='absolute top-3 right-3 w-6 h-6 rounded-full text-blue-500 bg-blue-300 hover:bg-blue-400 hover:text-blue-600 flex justify-center items-center cursor-pointer'>
                 <IoCloseSharp size={25}  />
             </motion.button>
             <Player muzData={muzData} />
