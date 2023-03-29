@@ -67,7 +67,7 @@ export const ExpData: ExpInfo = {
         },
       ],
       summary: [
-          "Designed,implemented, tested, and deployed an internal UI for easier database management and manipulation using React, Java, and AWS.",
+          "Designed, implemented, tested, and deployed an internal UI for easier database management and manipulation using React, Java, and AWS.",
           "Improved database management speed by 90%.",
           "Followed Amazon's Agile Development Cycle equivalent."
       ],

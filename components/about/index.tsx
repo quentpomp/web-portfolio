@@ -63,6 +63,7 @@ export default function About({ setIdx }: Props) {
                 <motion.div
                     variants={children}
                 >
+                    {/* <img src={duck} /> */}
                     <Image
                         src={calculating}
                         alt="calculating"

@@ -1,23 +1,34 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, Dispatch, SetStateAction } from 'react'
 import { motion } from "framer-motion"
 import { BsPause, BsPlay } from 'react-icons/bs'
 
-type Props = { muzData: MusicData }
+type Props = { muzData: MusicData, isPlaying: boolean, setIsPlaying: Dispatch<SetStateAction<boolean>> }
 
-export default function Player({ muzData }: Props) {
+export default function Player({ muzData, isPlaying, setIsPlaying }: Props) {
     // const song: HTMLAudioElement = new Audio(muzData.path)
 
     let songRef = useRef(null)
     // @ts-ignore
     // let song: HTMLAudioElement = document.getElementById(muzData.path)
+    const audio = new Audio(muzData.path)
+
 
     useEffect(() => {
-        // @ts-ignore
-        songRef.current.play()
+        // audio.play()
+        
+        try {
+            // @ts-ignore
+            songRef.current.play()
+            setIsPlaying(true)
+        }
+        catch {
+            console.log("Safari issue")
+        }
+        
         // song = document.getElementById(muzData.path)
         // song?.play()
     }, [])
-    const [isPlaying, setIsPlaying] = useState(true)
+    // const [isPlaying, setIsPlaying] = useState(true)
     return (
         <>
             <motion.div
@@ -35,30 +46,57 @@ export default function Player({ muzData }: Props) {
                     <BsPause
                         size={50}
                         onClick={() => {
-                            // @ts-ignore
-                            songRef.current.pause()
-                            // song?.pause()
-                            setIsPlaying(false)
+                            // audio.pause()
+                            try {
+                                // @ts-ignore
+                                songRef.current.pause()
+
+                                // song?.pause()
+                                setIsPlaying(false)
+                            }
+                            catch {
+                                console.log("Safari issue!")
+                            }
+
                         }} /> :
                     <BsPlay
                         size={50}
-                        onClick={() => { 
-                            // @ts-ignore
-                            songRef.current.play()
+                        onClick={() => {
+                            // audio.play()
+
+                            try {
+                                // @ts-ignore
+                                songRef.current.play()
+                                setIsPlaying(true)
+                            }
+                            catch {
+                                console.log("Safari issue!")
+                            }
+
                             // song?.play()
-                            setIsPlaying(true) 
-                    }} />}
-                <audio src={muzData.path} id={muzData.path} ref={songRef} />
+
+                        }} />}
+                {/* <audio src={muzData.path} controls autoPlay ref={songRef} /> */}
+                <audio autoPlay ref={songRef}>
+                    <source src={muzData.path}/>
+                </audio>
+
             </motion.div>
-            <motion.a 
+            <motion.a
                 href={muzData.url}
                 onClick={() => {
-                    setIsPlaying(false);
-                     // @ts-ignore
-                    songRef.current.pause()
+                    try {
+                        setIsPlaying(false);
+                        // @ts-ignore
+                        songRef.current.pause()
+                    }
+                    catch {
+                        console.log("Safari issue")
+                    }
+
                     // song?.pause()
                 }}
-                target="_blank" 
+                target="_blank"
                 rel="noopener noreferrer"
                 className='text-blue-500 opacity-70 text-sm font-semibold text-right hover:opacity-100 hover:underline duration-100'>{muzData.caption}</motion.a>
         </>

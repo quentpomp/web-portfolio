@@ -43,7 +43,7 @@ export const ProjData: ProjInfo = {
                 alt: "wavenet"
             },
             {
-                url: "",
+                url: "https://github.com/quentpomp/MLP-Thing-Generator",
                 icon: github,
                 alt: "github repo"
             }
